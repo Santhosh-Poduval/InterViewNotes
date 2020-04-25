@@ -1,0 +1,47 @@
+What is the difference between these twi piece of code?
+
+First code?
+
+var n =5;
+
+stepsRecu(n);
+
+function stepsRecu(n,row=0,str=''){
+    if(n==row) return;
+
+    if(str.length == n){
+        console.log(str);
+        stepsRecu(n,row+1);
+    }
+
+    if(str.length <= row)  str += '#';     
+    else str += ' ';
+    
+    stepsRecu(n,row,str);
+}
+
+
+Second code?
+
+
+var n =5;
+
+stepsRecu(n);
+
+function stepsRecu(n,row=0,str=''){
+    if(n==row) return;
+
+    if(str.length == n){
+        console.log(str);
+        return stepsRecu(n,row+1);
+    }
+
+    if(str.length <= row)  str += '#';     
+    else str += ' ';
+    
+    stepsRecu(n,row,str);
+}
+
+Why we should put return on  -    return stepsRecu(n,row+1); call?
+
+                
